@@ -21,13 +21,17 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(jokes, id: \.setup) { joke in
-                    NavigationLink(destination: Text(joke.punchline)) {
+                    NavigationLink(destination: Text(joke.punchline).frame(maxWidth: .infinity, maxHeight: .infinity)) {
                         EmojiView(for: joke.rating)
                         Text(joke.setup)
                     }
                 }
                 .onDelete(perform: removeJokes)
+                Button("Add Joke") {
+                    self.showingAddJoke.toggle()
+                }
             }
+            .listStyle(SidebarListStyle())
             .sheet(isPresented: $showingAddJoke) {
                 AddView().environment(\.managedObjectContext, self.moc)
             }
@@ -76,33 +80,33 @@ struct AddView: View {
     let ratings = ["Sob", "Sigh", "Silence", "Smirk"]
     
     var body: some View {
-        NavigationView {
-            Form {
-                Section {
-                    TextField("Setup", text: $setup)
-                    TextField("Punchline", text: $punchline)
-                    
-                    Picker("Rating", selection: $rating) {
-                        ForEach(ratings, id: \.self) { rating in
-                            Text(rating)
-                        }
-                    }
-                }
-                Button("Add Joke") {
-                    let newJoke = Joke(context: self.moc)
-                    newJoke.setup = self.setup
-                    newJoke.punchline = self.punchline
-                    newJoke.rating = self.rating
-                    
-                    do {
-                        try self.moc.save()
-                        self.presentationMode.wrappedValue.dismiss()
-                    } catch {
-                        print("Whoops! \(error.localizedDescription)")
+        Form {
+            Section {
+                TextField("Setup", text: $setup)
+                TextField("Punchline", text: $punchline)
+                
+                Picker("Rating", selection: $rating) {
+                    ForEach(ratings, id: \.self) { rating in
+                        Text(rating)
                     }
                 }
             }
+            Button("Add Joke") {
+                let newJoke = Joke(context: self.moc)
+                newJoke.setup = self.setup
+                newJoke.punchline = self.punchline
+                newJoke.rating = self.rating
+                
+                do {
+                    try self.moc.save()
+                    self.presentationMode.wrappedValue.dismiss()
+                } catch {
+                    print("Whoops! \(error.localizedDescription)")
+                }
+            }
         }
+        .frame(minWidth: 400)
+        .padding()
     }
 }
 
