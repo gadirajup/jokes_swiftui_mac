@@ -13,6 +13,8 @@
 		A4B37B2523387C4E000240CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B37B2423387C4E000240CF /* Assets.xcassets */; };
 		A4B37B2823387C4E000240CF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B37B2723387C4E000240CF /* Preview Assets.xcassets */; };
 		A4B37B2B23387C4E000240CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4B37B2923387C4E000240CF /* Main.storyboard */; };
+		A4B37B3523387C8D000240CF /* Joke+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B37B3323387C8D000240CF /* Joke+CoreDataClass.swift */; };
+		A4B37B3623387C8D000240CF /* Joke+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B37B3423387C8D000240CF /* Joke+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		A4B37B2A23387C4E000240CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A4B37B2C23387C4E000240CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4B37B2D23387C4E000240CF /* Jokers_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Jokers_Mac.entitlements; sourceTree = "<group>"; };
+		A4B37B3323387C8D000240CF /* Joke+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Joke+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A4B37B3423387C8D000240CF /* Joke+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Joke+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 		A4B37B1C23387C4D000240CF /* Jokers_Mac */ = {
 			isa = PBXGroup;
 			children = (
+				A4B37B3323387C8D000240CF /* Joke+CoreDataClass.swift */,
+				A4B37B3423387C8D000240CF /* Joke+CoreDataProperties.swift */,
 				A4B37B1D23387C4D000240CF /* AppDelegate.swift */,
 				A4B37B1F23387C4D000240CF /* ContentView.swift */,
 				A4B37B2423387C4E000240CF /* Assets.xcassets */,
@@ -148,6 +154,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4B37B3523387C8D000240CF /* Joke+CoreDataClass.swift in Sources */,
+				A4B37B3623387C8D000240CF /* Joke+CoreDataProperties.swift in Sources */,
 				A4B37B2023387C4D000240CF /* ContentView.swift in Sources */,
 				A4B37B1E23387C4D000240CF /* AppDelegate.swift in Sources */,
 				A4B37B2323387C4D000240CF /* Jokers_Mac.xcdatamodeld in Sources */,
